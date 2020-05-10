@@ -40,8 +40,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    'nuxt-fontawesome'
+    '@nuxtjs/axios'
   ],
   /*
   ** Axios module configuration
