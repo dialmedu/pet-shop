@@ -1,8 +1,21 @@
 <template>
   <div>
+    <Header />
     <nuxt />
   </div>
 </template>
+
+<script>
+    import Vue from 'vue'
+    
+    import Header from '../components/header/header.vue'
+
+    export default Vue.extend({
+      components: {
+        Header
+      }
+    })
+</script>
 
 <style>
 html {
@@ -52,4 +65,7 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+a{ text-decoration: none; }
+li{list-style: none;}
 </style>
