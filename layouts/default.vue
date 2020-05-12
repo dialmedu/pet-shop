@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <Header />
-    <nuxt />
-  </div>
+  <client-only>
+    <div>
+      <Header />
+      <nuxt />
+    </div>
+  </client-only>
 </template>
 
 <script>
@@ -18,6 +20,10 @@
 </script>
 
 <style>
+:root {
+  --primary-color: #3e9ee9;
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -68,4 +74,8 @@ html {
 
 a{ text-decoration: none; }
 li{list-style: none;}
+
+.color-primary{
+  color: var(--primary-color);
+}
 </style>

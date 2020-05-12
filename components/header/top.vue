@@ -1,22 +1,22 @@
 <template>
     <section class="top">
             <div class="left">
-                <nav>
+                <ul>
                     <li v-for="(menu, i) in menus" v-bind:key="i">
                         <a :href="menu.href">{{menu.title}}</a>
                     </li>
-                </nav>
+                </ul>
             </div>
             <div class="center">
                 <p class="text-offer">
-                    <b class="color-blue">30% Sale</b>
-                    <span >of your first <li><font-awesome-icon icon="box-open" class="icon color-blue" fixed-width /></li></span>
+                    <b class="color-primary">30% Sale</b>
+                    <span >of your first <li><font-awesome-icon icon="box-open" class="icon color-primary" fixed-width /></li></span>
                     <b>Autoship</b>
                 </p>
             </div>
             <div class="right">
                 <div class="auth">
-                    <div v-if="!auth">
+                    <div v-if="true">
                         Account
                     </div>
                     <div v-else>
@@ -30,11 +30,13 @@
                     </li>
                 </div>
                 <div class="box-shopping-cart">
-                    <div class="box-icon">
-                        <font-awesome-icon icon="shopping-cart" class="icon" fixed-width ></font-awesome-icon>
-                    </div>
-                    <span class="margin-r5">Cart</span>
-                    <span>(10)</span>
+                    <a href="/cart">
+                        <div class="box-icon">
+                            <font-awesome-icon icon="shopping-cart" class="icon" fixed-width ></font-awesome-icon>
+                        </div>
+                        <span class="margin-r5">Cart</span>
+                        <span>(10)</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -94,11 +96,12 @@
     }
 
     /* LEFT */
-    section>.left>nav{
+    section>.left>ul{
         display: flex;
+        padding-left: 0;
     }
 
-    section>.left>nav>li{
+    section>.left>ul>li{
         margin-right: 25px;
     }
 
@@ -119,14 +122,18 @@
     }
 
     section .box-shopping-cart{
-        background-color: #66a7e9;
+        background-color: var(--primary-color);
         height: 100%;
         padding: 15px 8px;
         cursor: pointer;
         display: flex;
     }
 
-    section .box-shopping-cart>div{
+    section .box-shopping-cart>a{
+        display: flex;
+    }
+
+    section .box-shopping-cart>a>div{
         height: 17px;
         width: 17px;
         margin-right: 8px;
@@ -135,7 +142,7 @@
         top: 1.9px;
     }
         
-    section .box-shopping-cart>div>.icon{
+    section .box-shopping-cart>a>div>.icon{
         width: 100%;
         height: 100%;
     }
@@ -157,9 +164,5 @@
         position: relative;
         margin-left: 8px;
         top: 1px;
-    }
-
-    .color-blue{
-        color: #66a7e9;
     }
 </style>
